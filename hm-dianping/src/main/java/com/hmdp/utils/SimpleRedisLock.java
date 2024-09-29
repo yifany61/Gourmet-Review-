@@ -22,11 +22,11 @@ public class SimpleRedisLock implements ILock{
         // 获取锁
         Boolean success = stringRedisTemplate.opsForValue().
                 setIfAbsent(KEY_PREFIX + name, threadId + "", timeoutSec, TimeUnit.SECONDS);
-        return false;
+        return success.TRUE.equals(success);
     }
 
     @Override
     public void unlock() {
-
+        stringRedisTemplate.delete(KEY_PREFIX + name);
     }
 }
