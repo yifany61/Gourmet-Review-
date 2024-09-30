@@ -84,11 +84,23 @@ public class VoucherOrder implements Serializable {
         this.orderId = orderId;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
     public void setUserId(long userId) {
         this.userId = userId;
     }
 
     public void setVouchId(Long voucherId) {
         this.voucherId = voucherId;
+    }
+
+    public Long getVoucherId() {
+        return voucherId;
     }
 }

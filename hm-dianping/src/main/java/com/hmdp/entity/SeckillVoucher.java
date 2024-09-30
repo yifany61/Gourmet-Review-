@@ -94,4 +94,12 @@ public class SeckillVoucher implements Serializable {
     public int getStock() {
         return stock;
     }
+
+    public void setVoucherId(Long voucherId) {
+        this.voucherId = voucherId;
+    }
+
+    public void setStock(Integer stock) {
+        this.stock = stock;
+    }
 }
