@@ -7,8 +7,10 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+import org.springframework.data.geo.Distance;
 
 import java.io.Serializable;
+import java.time.DayOfWeek;
 import java.time.LocalDateTime;
 
 /**
@@ -107,7 +109,23 @@ public class Shop implements Serializable {
     @TableField(exist = false)
     private Double distance;
 
+    public Long getTypeId() {
+        return typeId;
+    }
+
     public Long getId() {
         return id;
+    }
+
+    public Double getX() {
+        return x;
+    }
+
+    public Double getY() {
+        return y;
+    }
+
+    public void setDistance(Double distance) {
+        this.distance = distance;
     }
 }
